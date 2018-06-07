@@ -3,13 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import { arr } from './example.js'
 
-const ids = arr.map(function(id, i) {
-  return id.id
-})
-console.log(ids)
-
-
 class App extends Component {
+
+  componentDidMount() {
+    const ids = arr.map(function(id, i) {
+      return id.id
+    })
+    console.log(ids)
+  }
+
   render() {
     return (
       <div className="App">
