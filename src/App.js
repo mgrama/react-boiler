@@ -3,8 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import { arr } from './example.js'
 
-arr.forEach(i => console.log(i))
-
+const ids = arr.map(function(id, i) {
+  return id.id
+})
+console.log(ids)
 
 
 class App extends Component {

@@ -1,4 +1,4 @@
-const arr = [
+export const arr = [
 	{
 		id: 1,
 		name: 'Августин Иппонийский блж.',
