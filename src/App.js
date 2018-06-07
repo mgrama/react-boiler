@@ -3,13 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 import { arr } from './example.js'
 
+//const count = 2;
+
 class App extends Component {
 
   componentDidMount() {
-    const ids = arr.map(function(id, i) {
+    const count = this.count;
+    const ids = arr.map(function(id) {
       return id.id
     })
     console.log(ids)
+    const objs = {};
+    arr.forEach(function(item) {
+        objs[item.id] = item
+    })
+    console.log(objs)
   }
 
   render() {
