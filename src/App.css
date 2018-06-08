@@ -27,6 +27,27 @@
   to { transform: rotate(360deg); }
 }
 
-ol {
-  text-align: left;
+
+li {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: auto;
+  align-items: baseline;
+  flex-basis: 100px;
+}
+
+div p {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  margin: 8px;
+  
+}
+div h3 {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  margin: 8px;
+
 }

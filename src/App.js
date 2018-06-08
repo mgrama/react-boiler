@@ -8,28 +8,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <table>
-          <tr>
-            <td>
-              <ol>
-                {arr.map((item) =>
-                <li key={item.id}>
-                  <td>
-                    <h3>{item.name}</h3>
-                  </td>
-                  <td>
-                    <p>{item.century}</p>
-                  </td>
-                  <td>
-                    <p>{item.ekzeget_type.title}</p>
-                  </td>
-                </li>
+                {arr.map((item, i) =>
+                  <li key={item.i}>
+                    <div>
+                      <p>{i}</p>
+                    </div>
+                    <div>
+                      <h3>{item.name}</h3>
+                    </div>
+                    <div>
+                      <p>{item.century}</p>
+                    </div>
+                    <div>
+                      <p>{item.ekzeget_type.title}</p>
+                    </div>
+                  </li>
                 )}
-              </ol>
-            </td>
-          </tr>
-
-        </table>
 
       </div>
     );
