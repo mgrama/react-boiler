@@ -1,11 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { arr } from './example.js'
 
-//const count = 2;
+const TABLE_COLUMNS = [
+  {
+    label: 'Имя',
+    sort: 'default',
+  },
+  {
+    label: 'Век',
+    sort: 'default',
+  },
+  {
+    label: 'Активность',
+    sort: 'default',
+  },
+];
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: [],
+      columns: TABLE_COLUMNS
+    }
+  }
 
   componentDidMount() {
     const count = this.count;
@@ -13,23 +34,18 @@ class App extends Component {
       return id.id
     })
     console.log(ids)
-    const objs = {};
-    arr.forEach(function(item) {
-        objs[item.id] = item
-    })
+    const objs = arr.reduce((sum, i) => ({ ...sum, [i.id]: i }), {});
     console.log(objs)
+  }
+
+  renderOptions() {
+    const objs = this.state
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {this.renderOptions()}
       </div>
     );
   }
