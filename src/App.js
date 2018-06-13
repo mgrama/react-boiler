@@ -1,43 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
 import { arr } from './example.js';
-import PropTypes from 'prop-types';
+import ListItem from './components/ListItem';
 
 class App extends Component {
-
-  render() {
-    let name = this.props.name
-    return (
-      <div className="App">
-        <ol>
-          {arr.map((item, i) =>
-            <li key={item.i}>  <div>
-                    <p>{i}</p>
-                  </div>
-                  <div>
-                    <h3>{item.name}</h3>
-                  </div>
-                  <div>
-                    <p>{item.century}</p>
-                  </div>
-                  <div>
-                    <p>{item.ekzeget_type.title}</p>
-                  </div>
-                </li>
-              )}
-        </ol>
-      </div>
-
-    )
-
-    App.propTypes = {
-      name: PropTypes.string.isRequired,
-      century: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired
-    }
-  }
-
-
+	render() {
+		return (
+			<div className="App">
+				<ol>
+					{arr.map((item, index) => (
+						<ListItem
+							key={item.id}
+							number={index}
+							name={item.name}
+							century={item.century}
+							ekzegetType={item.ekzeget_type.title}
+						/>
+					))}
+				</ol>
+			</div>
+		);
+	}
 }
 
 export default App;
