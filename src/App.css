@@ -25,12 +25,14 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+  ul { list-style: none; }
 }
 
 
 li {
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   margin: auto;
   align-items: baseline;
@@ -42,7 +44,7 @@ div p {
   flex-flow: row nowrap;
   align-items: baseline;
   margin: 8px;
-  
+
 }
 div h3 {
   display: flex;
